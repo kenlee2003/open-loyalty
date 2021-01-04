@@ -4,6 +4,7 @@ metadata:
   annotations:
     kompose.cmd: kompose convert
     kompose.version: 1.21.0 (992df58d8)
+    dev.okteto.com/auto-ingress: "true"
   creationTimestamp: null
   labels:
     io.kompose.service: elk
