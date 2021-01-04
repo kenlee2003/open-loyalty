@@ -46,6 +46,8 @@ spec:
         image: postgres:9
         imagePullPolicy: ""
         name: openloyalty-db
+        ports:
+        - containerPort: 80
         resources: {}
         volumeMounts:
         - mountPath: /docker-entrypoint-initdb.d
