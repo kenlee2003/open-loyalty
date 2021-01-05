@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: front
+  namespace: kenlee2003
+data:
+  config.js: |-
+          const config = {
+              "apiUrl": "https://nginx-kenlee2003.cloud.okteto.net/api",
+              "dateFormat": "YYYY-MM-DD",
+              "dateTimeFormat": "YYYY-MM-DD HH:mm",
+              "perPage": 20,
+              "debug": false,
+              "modules": []
+          };
+          window.OpenLoyaltyConfig = {
+              "apiUrl": "https://nginx-kenlee2003.cloud.okteto.net/api",
+              "dateFormat": "YYYY-MM-DD",
+              "dateTimeFormat": "YYYY-MM-DD HH:mm",
+              "perPage": 20,
+              "debug": false,
+              "modules": []
+          };
