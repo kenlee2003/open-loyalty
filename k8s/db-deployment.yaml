@@ -47,10 +47,10 @@ spec:
         imagePullPolicy: ""
         name: openloyalty-db
         ports:
-        - containerPort: 80
+        - containerPort: 5432
         resources: {}
         volumeMounts:
-        - mountPath: /var/lib/postgresql/data
+        - mountPath: /docker-entrypoint-initdb.d
           name: db-claim0
       restartPolicy: Always
       serviceAccountName: ""
