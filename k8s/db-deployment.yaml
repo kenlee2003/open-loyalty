@@ -50,7 +50,7 @@ spec:
         - containerPort: 80
         resources: {}
         volumeMounts:
-        - mountPath: /docker-entrypoint-initdb.d
+        - mountPath: /var/lib/postgresql/data
           name: db-claim0
       restartPolicy: Always
       serviceAccountName: ""

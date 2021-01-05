@@ -24,7 +24,7 @@ spec:
         io.kompose.service: nginx
     spec:
       containers:
-      - image: divante/open-loyalty-web
+      - image: divante/open-loyalty-web:latest
         imagePullPolicy: ""
         name: openloyalty-frontend
         ports:
@@ -34,7 +34,16 @@ spec:
         - containerPort: 3002
         - containerPort: 3003
         resources: {}
+        volumeMounts:
+          - mountPath: /var/www/openloyalty/front/config.js
+            name: config
+            subPath: config.js
       restartPolicy: Always
-      serviceAccountName: ""
-      volumes: null
+      volumes:
+        - name: config
+          configMap:
+            name: front
+            items:
+              - key: config.js
+                path: config.js
 status: {}
