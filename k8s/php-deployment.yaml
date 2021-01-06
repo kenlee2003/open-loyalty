@@ -43,26 +43,11 @@ spec:
           value: openloyalty
         - name: POSTGRES_USER
           value: openloyalty
-        image: divante/open-loyalty:latest
+        image: divante/open-loyalty-fpm
         imagePullPolicy: ""
         name: openloyalty-backend
         resources: {}
-        volumeMounts:
-        - mountPath: /var/www/openloyalty/var/cache
-          name: cache
-        - mountPath: /var/www/openloyalty/var/logs
-          name: logs
-        - mountPath: /var/www/openloyalty/app/var/jwt
-          name: jwt
       restartPolicy: Always
-      volumes:
-      - name: cache
-        persistentVolumeClaim:
-          claimName: cache
-      - name: logs
-        persistentVolumeClaim:
-          claimName: logs
-      - name: jwt
-        persistentVolumeClaim:
-          claimName: jwt
+      serviceAccountName: ""
+      volumes: null
 status: {}
